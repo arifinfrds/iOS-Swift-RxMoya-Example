@@ -11,6 +11,7 @@
 		6FF70F0E2F9A3240C909F8B9 /* Pods_RxMoyaExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B497118513C4393797A2E1F3 /* Pods_RxMoyaExampleTests.framework */; };
 		9221AAE725C027AC003D59DC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221AAE625C027AC003D59DC /* Photo.swift */; };
 		9221AAEC25C027DE003D59DC /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221AAEB25C027DE003D59DC /* PhotoService.swift */; };
+		9221AAF125C028C5003D59DC /* PhotoDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221AAF025C028C5003D59DC /* PhotoDataService.swift */; };
 		922FA69725C023A70095919C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FA69625C023A70095919C /* AppDelegate.swift */; };
 		922FA69925C023A70095919C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FA69825C023A70095919C /* SceneDelegate.swift */; };
 		922FA69B25C023A70095919C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FA69A25C023A70095919C /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 		8EB48135C997E9B578F78527 /* Pods-RxMoyaExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMoyaExample.debug.xcconfig"; path = "Target Support Files/Pods-RxMoyaExample/Pods-RxMoyaExample.debug.xcconfig"; sourceTree = "<group>"; };
 		9221AAE625C027AC003D59DC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9221AAEB25C027DE003D59DC /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		9221AAF025C028C5003D59DC /* PhotoDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataService.swift; sourceTree = "<group>"; };
 		922FA69325C023A70095919C /* RxMoyaExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMoyaExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922FA69625C023A70095919C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		922FA69825C023A70095919C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				922FA6A425C023A80095919C /* Info.plist */,
 				9221AAE625C027AC003D59DC /* Photo.swift */,
 				9221AAEB25C027DE003D59DC /* PhotoService.swift */,
+				9221AAF025C028C5003D59DC /* PhotoDataService.swift */,
 			);
 			path = RxMoyaExample;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				9221AAE725C027AC003D59DC /* Photo.swift in Sources */,
 				922FA69B25C023A70095919C /* ViewController.swift in Sources */,
 				922FA69725C023A70095919C /* AppDelegate.swift in Sources */,
+				9221AAF125C028C5003D59DC /* PhotoDataService.swift in Sources */,
 				922FA69925C023A70095919C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
