@@ -22,3 +22,19 @@ struct PhotoResponseDTO: Codable {
         case thumbnailURL = "thumbnailUrl"
     }
 }
+
+extension PhotoResponseDTO {
+    
+    func toModel() -> Photo {
+        return Photo(albumID: albumID, id: id, title: title, url: url, thumbnailURL: thumbnailURL)
+    }
+    
+}
+
+struct Photo {
+    let albumID: Int
+    let id: Int
+    let title: String
+    let url: String
+    let thumbnailURL: String
+}
