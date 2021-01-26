@@ -17,7 +17,7 @@ class DefaultPhotoDataServiceTests: XCTestCase {
         
         let exp = expectation(description: "Wait for completion")
         
-        var capturedPhotos = [PhotoResponseDTO]()
+        var capturedPhotos = [Photo]()
         _ = sut.fetchPhotos().subscribe { photos in
             capturedPhotos = photos
             exp.fulfill()

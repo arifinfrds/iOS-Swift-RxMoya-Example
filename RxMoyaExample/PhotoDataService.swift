@@ -10,7 +10,7 @@ import Moya
 import RxSwift
 
 protocol PhotoDataService {
-    func fetchPhotos() -> Single<[PhotoResponseDTO]>
+    func fetchPhotos() -> Single<[Photo]>
 }
 
 final class DefaultPhotoDataService: PhotoDataService {
@@ -20,8 +20,9 @@ final class DefaultPhotoDataService: PhotoDataService {
         self.provider = provider
     }
     
-    func fetchPhotos() -> Single<[PhotoResponseDTO]> {
+    func fetchPhotos() -> Single<[Photo]> {
         return provider.rx.request(.fetchPhotos)
             .map([PhotoResponseDTO].self)
+            .map { $0.map { $0.toModel() } }
     }
 }
