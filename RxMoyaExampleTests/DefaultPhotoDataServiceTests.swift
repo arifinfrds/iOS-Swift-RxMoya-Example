@@ -14,17 +14,11 @@ class DefaultPhotoDataServiceTests: XCTestCase {
     
     func test_fetchPhotos_deliverPhotos() {
         let sut = makeSUT()
-        
-        let exp = expectation(description: "Wait for completion")
-        
-        var capturedPhotos = [Photo]()
-        _ = sut.fetchPhotos().subscribe { photos in
-            capturedPhotos = photos
-            exp.fulfill()
-        } onError: { error in
-            XCTFail("Expect success but got error instead, error: \(error)")
+                
+        guard let capturedPhotos = try! sut.fetchPhotos().toBlocking().first() else {
+            XCTFail("expect photos but got nil instead")
+            return
         }
-        wait(for: [exp], timeout: 5.0)
         
         XCTAssertTrue(!capturedPhotos.isEmpty)
     }
