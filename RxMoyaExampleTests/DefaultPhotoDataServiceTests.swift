@@ -7,6 +7,7 @@
 
 import XCTest
 import Moya
+import RxBlocking
 @testable import RxMoyaExample
 
 class DefaultPhotoDataServiceTests: XCTestCase {
@@ -16,17 +17,14 @@ class DefaultPhotoDataServiceTests: XCTestCase {
         
         let exp = expectation(description: "Wait for completion")
         
-        var capturedPhotos = [Photo]()
-        sut.fetchPhotos { result in
-            switch result {
-            case .success(let photos):
-                capturedPhotos = photos
-                exp.fulfill()
-            case .failure(let error):
-                XCTFail("Expect success but got error instead, error: \(error)")
-            }
+        var capturedPhotos = [PhotoResponseDTO]()
+        _ = sut.fetchPhotos().subscribe { photos in
+            capturedPhotos = photos
+            exp.fulfill()
+        } onError: { error in
+            XCTFail("Expect success but got error instead, error: \(error)")
         }
-        wait(for: [exp], timeout: 2.0)
+        wait(for: [exp], timeout: 5.0)
         
         XCTAssertTrue(!capturedPhotos.isEmpty)
     }

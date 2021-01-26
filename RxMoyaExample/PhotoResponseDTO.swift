@@ -1,5 +1,5 @@
 //
-//  Photo.swift
+//  PhotoResponseDTO.swift
 //  RxMoyaExample
 //
 //  Created by Arifin Firdaus on 26/01/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Photo: Codable {
+struct PhotoResponseDTO: Codable {
     let albumID: Int
     let id: Int
     let title: String

@@ -7,11 +7,10 @@
 
 import Foundation
 import Moya
-
-typealias FetchPhotosResult = (Result<[Photo], Error>) -> Void
+import RxSwift
 
 protocol PhotoDataService {
-    func fetchPhotos(completion: @escaping FetchPhotosResult)
+    func fetchPhotos() -> Single<[PhotoResponseDTO]>
 }
 
 final class DefaultPhotoDataService: PhotoDataService {
@@ -21,20 +20,8 @@ final class DefaultPhotoDataService: PhotoDataService {
         self.provider = provider
     }
     
-    func fetchPhotos(completion: @escaping FetchPhotosResult) {
-        provider.request(.fetchPhotos) { result in
-            switch result {
-            case .success(let response):
-                do {
-                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let photos = try JSONDecoder().decode([Photo].self, from: filteredResponse.data)
-                    completion(.success(photos))
-                } catch {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+    func fetchPhotos() -> Single<[PhotoResponseDTO]> {
+        return provider.rx.request(.fetchPhotos)
+            .map([PhotoResponseDTO].self)
     }
 }
