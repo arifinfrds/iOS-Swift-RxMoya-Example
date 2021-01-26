@@ -1,6 +1,6 @@
 //
-//  RxMoyaExampleTests.swift
-//  RxMoyaExampleTests
+//  DefaultPhotoDataServiceTests.swift
+//  DefaultPhotoDataServiceTests
 //
 //  Created by Arifin Firdaus on 26/01/21.
 //
@@ -9,7 +9,7 @@ import XCTest
 import Moya
 @testable import RxMoyaExample
 
-class RxMoyaExampleTests: XCTestCase {
+class DefaultPhotoDataServiceTests: XCTestCase {
     
     func test_fetchPhotos_deliverPhotos() {
         let sut = makeSUT()
