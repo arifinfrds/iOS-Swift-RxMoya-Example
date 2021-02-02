@@ -18,7 +18,7 @@
 		922FA69E25C023A70095919C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922FA69C25C023A70095919C /* Main.storyboard */; };
 		922FA6A025C023A80095919C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922FA69F25C023A80095919C /* Assets.xcassets */; };
 		922FA6A325C023A80095919C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922FA6A125C023A80095919C /* LaunchScreen.storyboard */; };
-		922FA6AE25C023A80095919C /* DefaultPhotoDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FA6AD25C023A80095919C /* DefaultPhotoDataServiceTests.swift */; };
+		922FA6AE25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FA6AD25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift */; };
 		922FA6B925C023A80095919C /* RxMoyaExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FA6B825C023A80095919C /* RxMoyaExampleUITests.swift */; };
 		C467B9C0C59BCB355F33F33C /* Pods_RxMoyaExample_RxMoyaExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4A7E9F285CDB6C3012422C /* Pods_RxMoyaExample_RxMoyaExampleUITests.framework */; };
 /* End PBXBuildFile section */
@@ -59,7 +59,7 @@
 		922FA6A225C023A80095919C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		922FA6A425C023A80095919C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		922FA6A925C023A80095919C /* RxMoyaExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMoyaExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		922FA6AD25C023A80095919C /* DefaultPhotoDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPhotoDataServiceTests.swift; sourceTree = "<group>"; };
+		922FA6AD25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPhotoDataServiceAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		922FA6AF25C023A80095919C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		922FA6B425C023A80095919C /* RxMoyaExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMoyaExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		922FA6B825C023A80095919C /* RxMoyaExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMoyaExampleUITests.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		922FA6AC25C023A80095919C /* RxMoyaExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				922FA6AD25C023A80095919C /* DefaultPhotoDataServiceTests.swift */,
+				922FA6AD25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift */,
 				922FA6AF25C023A80095919C /* Info.plist */,
 			);
 			path = RxMoyaExampleTests;
@@ -446,7 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				922FA6AE25C023A80095919C /* DefaultPhotoDataServiceTests.swift in Sources */,
+				922FA6AE25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
