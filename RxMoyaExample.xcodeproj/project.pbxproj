@@ -20,6 +20,7 @@
 		922FA6A325C023A80095919C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922FA6A125C023A80095919C /* LaunchScreen.storyboard */; };
 		922FA6AE25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FA6AD25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift */; };
 		922FA6B925C023A80095919C /* RxMoyaExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FA6B825C023A80095919C /* RxMoyaExampleUITests.swift */; };
+		92A95E3025C8F931002B5105 /* DefaultPhotoDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A95E2F25C8F931002B5105 /* DefaultPhotoDataServiceTests.swift */; };
 		C467B9C0C59BCB355F33F33C /* Pods_RxMoyaExample_RxMoyaExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4A7E9F285CDB6C3012422C /* Pods_RxMoyaExample_RxMoyaExampleUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		922FA6B425C023A80095919C /* RxMoyaExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMoyaExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		922FA6B825C023A80095919C /* RxMoyaExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMoyaExampleUITests.swift; sourceTree = "<group>"; };
 		922FA6BA25C023A80095919C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92A95E2F25C8F931002B5105 /* DefaultPhotoDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPhotoDataServiceTests.swift; sourceTree = "<group>"; };
 		A6D7E48C519DBD8BA4DA2ED7 /* Pods_RxMoyaExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMoyaExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B497118513C4393797A2E1F3 /* Pods_RxMoyaExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMoyaExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9450D4B0A08881AFFF3EC0 /* Pods-RxMoyaExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMoyaExample.release.xcconfig"; path = "Target Support Files/Pods-RxMoyaExample/Pods-RxMoyaExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				922FA6AD25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift */,
 				922FA6AF25C023A80095919C /* Info.plist */,
+				92A95E2F25C8F931002B5105 /* DefaultPhotoDataServiceTests.swift */,
 			);
 			path = RxMoyaExampleTests;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A95E3025C8F931002B5105 /* DefaultPhotoDataServiceTests.swift in Sources */,
 				922FA6AE25C023A80095919C /* DefaultPhotoDataServiceAPIEndToEndTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

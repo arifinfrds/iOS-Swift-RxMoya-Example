@@ -27,7 +27,23 @@ enum PhotoService: TargetType {
     }
     
     var sampleData: Data {
-        return Data()
+        switch self {
+        case .fetchPhotos:
+            let photo: [String: Any] = [
+                "albumId": 1,
+                "id": 1,
+                "title": "accusamus beatae ad facilis cum similique qui sunt",
+                "url": "https://via.placeholder.com/600/92c952",
+                "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+            ]
+            let photos = [photo]
+            do {
+                let data = try JSONSerialization.data(withJSONObject: photos, options: .prettyPrinted)
+                return data
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        }
     }
     
     var task: Task {
