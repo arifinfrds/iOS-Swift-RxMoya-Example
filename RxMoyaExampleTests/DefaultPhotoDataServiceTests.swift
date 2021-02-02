@@ -23,6 +23,9 @@ class DefaultPhotoDataServiceTests: XCTestCase {
         XCTAssertTrue(!capturedPhotos.isEmpty)
     }
     
+    
+    // MARK: - Helpers
+    
     private func makeSUT() -> DefaultPhotoDataService {
         let provider = MoyaProvider<PhotoService>()
         return DefaultPhotoDataService(provider: provider)
