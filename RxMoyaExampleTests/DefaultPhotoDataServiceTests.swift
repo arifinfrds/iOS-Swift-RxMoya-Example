@@ -69,7 +69,7 @@ class DefaultPhotoDataServiceTests: XCTestCase {
         let url = URL(target: target).absoluteString
         return Endpoint(
             url: url,
-            sampleResponseClosure: {.networkResponse(200, target.sampleData)},
+            sampleResponseClosure: {.networkResponse(200, target.testDefaultSampleData)},
             method: target.method,
             task: target.task,
             httpHeaderFields: target.headers
@@ -87,3 +87,43 @@ class DefaultPhotoDataServiceTests: XCTestCase {
         )
     }
 }
+
+
+fileprivate extension PhotoService {
+    
+    var testDefaultSampleData: Data {
+        switch self {
+        case .fetchPhotos:
+            let photo: [String: Any] = [
+                "albumId": 1,
+                "id": 1,
+                "title": "accusamus beatae ad facilis cum similique qui sunt",
+                "url": "https://via.placeholder.com/600/92c952",
+                "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+            ]
+            let photos = [photo]
+            do {
+                let data = try JSONSerialization.data(withJSONObject: photos, options: .prettyPrinted)
+                return data
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        }
+    }
+    
+    var unauhtorizedSampleData: Data {
+        switch self {
+        case .fetchPhotos:
+            let serverResponse: [String: Any] = [
+                "message": "invalid credentials"
+            ]
+            do {
+                let data = try JSONSerialization.data(withJSONObject: serverResponse, options: .prettyPrinted)
+                return data
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        }
+    }
+}
+
