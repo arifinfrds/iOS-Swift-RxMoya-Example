@@ -42,7 +42,12 @@ class DefaultPhotoDataServiceTests: XCTestCase {
     
     private let defaultEndpointClosure = { (target: PhotoService) -> Endpoint in
         let url = URL(target: target).absoluteString
-        return Endpoint(url: url, sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, task: target.task, httpHeaderFields: target.headers)
+        return Endpoint(
+            url: url,
+            sampleResponseClosure: {.networkResponse(200, target.sampleData)},
+            method: target.method, task: target.task,
+            httpHeaderFields: target.headers
+        )
     }
     
     
