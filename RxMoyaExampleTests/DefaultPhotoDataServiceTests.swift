@@ -33,8 +33,16 @@ class DefaultPhotoDataServiceTests: XCTestCase {
     // MARK: - Helpers
     
     private func makeSUT() -> DefaultPhotoDataService {
-        let provider = MoyaProvider<PhotoService>(stubClosure: MoyaProvider.immediatelyStub)
+        let provider = MoyaProvider<PhotoService>(
+            endpointClosure: defaultEndpointClosure,
+            stubClosure: MoyaProvider.immediatelyStub
+        )
         return DefaultPhotoDataService(provider: provider)
+    }
+    
+    private let defaultEndpointClosure = { (target: PhotoService) -> Endpoint in
+        let url = URL(target: target).absoluteString
+        return Endpoint(url: url, sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, task: target.task, httpHeaderFields: target.headers)
     }
     
     
