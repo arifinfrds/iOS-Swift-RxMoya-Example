@@ -20,9 +20,31 @@ final class DefaultPhotoDataService: PhotoDataService {
         self.provider = provider
     }
     
+    enum Error: Swift.Error {
+        case unauthorized
+        case unknown
+    }
+    
     func fetchPhotos() -> Single<[Photo]> {
-        return provider.rx.request(.fetchPhotos)
-            .map([PhotoResponseDTO].self)
-            .map { $0.map { $0.toModel() } }
+        return Single.create { single -> Disposable in
+            return self.provider.rx.request(.fetchPhotos)
+                .subscribe { response in
+                    if response.statusCode == 200 {
+                        do {
+                            let photoResponseDTOs = try JSONDecoder().decode([PhotoResponseDTO].self, from: response.data)
+                            let photoModels = photoResponseDTOs.map { $0.toModel() }
+                            return single(.success(photoModels))
+                        } catch {
+                            return single(.error(error))
+                        }
+                    } else if response.statusCode == 401 {
+                        return single(.error(Error.unauthorized))
+                    } else {
+                        return single(.error(Error.unknown))
+                    }
+                } onError: { error in
+                    return single(.error(error))
+                }
+        }
     }
 }

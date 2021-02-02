@@ -55,3 +55,22 @@ enum PhotoService: TargetType {
     }
     
 }
+
+
+extension PhotoService {
+    
+    var unauhtorizedSampleData: Data {
+        switch self {
+        case .fetchPhotos:
+            let serverResponse: [String: Any] = [
+                "message": "invalid credentials"
+            ]
+            do {
+                let data = try JSONSerialization.data(withJSONObject: serverResponse, options: .prettyPrinted)
+                return data
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        }
+    }
+}
